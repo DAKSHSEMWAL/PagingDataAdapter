@@ -19,7 +19,9 @@ class RedditAdapter :
     }
 
     override fun onBindViewHolder(holder: RedditViewHolder, position: Int) {
-        TODO("not implemented")
+        getItem(position)?.let { redditPost ->
+            holder.bindPost(redditPost)
+        }
     }
 
     class RedditViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

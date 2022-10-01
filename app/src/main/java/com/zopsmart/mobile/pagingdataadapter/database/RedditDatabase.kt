@@ -5,6 +5,8 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.zopsmart.mobile.pagingdataadapter.common.DataBaseConstants.DATABASE_NAME
+import com.zopsmart.mobile.pagingdataadapter.database.dao.RedditKeysDao
+import com.zopsmart.mobile.pagingdataadapter.database.dao.RedditPostsDao
 import com.zopsmart.mobile.pagingdataadapter.models.RedditKeys
 import com.zopsmart.mobile.pagingdataadapter.models.RedditPost
 
@@ -21,4 +23,12 @@ abstract class RedditDatabase : RoomDatabase() {
             return databaseBuilder.build()
         }
     }
+
+    abstract fun redditPostsDao(): RedditPostsDao
+
+    abstract fun redditKeysDao(): RedditKeysDao
+
 }
+
+
+
